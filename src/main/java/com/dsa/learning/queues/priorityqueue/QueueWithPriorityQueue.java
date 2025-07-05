@@ -1,4 +1,4 @@
-package com.dsa.learning.queue.gfg.basics;
+package com.dsa.learning.queues.priorityqueue;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
