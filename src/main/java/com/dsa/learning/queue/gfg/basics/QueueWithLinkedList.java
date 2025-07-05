@@ -1,4 +1,4 @@
-package com.dsa.learning.queue.gfg;
+package com.dsa.learning.queue.gfg.basics;
 
 import java.util.LinkedList;
 import java.util.Queue;
