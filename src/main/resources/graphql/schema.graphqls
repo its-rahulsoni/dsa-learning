@@ -1,0 +1,34 @@
+# Note: There can be only 1 Query inside one schema file. We can have multiple schema files.
+
+# Query is the entry point for read operations.
+type Query {
+  hello: String
+  user(id: ID!): User
+  welcome: String
+  customException(id: ID!): User
+  allUsers: [IUser!]! # Interface ....
+  search(text: String!): [SearchResult!]! # Union ....
+}
+
+# Declares a mutation that takes id, name, and email as input
+# Returns a User object
+type Mutation {
+  createUser(id: ID!, name: String!, email: String!): User
+  createUserWithInputArgument(input: CreateUserInput!): User
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+}
+
+# User is a custom object type with fields and their types.User
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  posts: [Post!]!
+}
+
+
