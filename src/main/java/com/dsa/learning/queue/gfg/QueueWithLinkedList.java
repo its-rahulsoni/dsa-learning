@@ -3,7 +3,7 @@ package com.dsa.learning.queue.gfg;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BasicQueueImpl {
+public class QueueWithLinkedList {
 
     public static void main(String[] args) {
 
