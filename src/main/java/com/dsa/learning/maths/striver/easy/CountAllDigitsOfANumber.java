@@ -1,4 +1,4 @@
-package com.dsa.learning.maths.striver;
+package com.dsa.learning.maths.striver.easy;
 
 /**
  * THOUGHT PROCESS:
@@ -9,7 +9,7 @@ package com.dsa.learning.maths.striver;
 public class CountAllDigitsOfANumber {
 
     public static void main(String[] args) {
-        System.out.println("Total number of digits: " + calculateDigits(123));
+        System.out.println("Total number of digits: " + calculateDigits(123558777));
     }
 
     public static int calculateDigits(int number){

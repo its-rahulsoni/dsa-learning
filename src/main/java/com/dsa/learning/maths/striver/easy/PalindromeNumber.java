@@ -1,16 +1,32 @@
-package com.dsa.learning.maths.striver;
+package com.dsa.learning.maths.striver.easy;
 
 /**
+ * A palindrome number is a number which reads the same both left to right and right to left. Ex: 121, 101, 949, 767.
+ *
  * THOUGHT PROCESS:
- * To reverse a number, we should separate out all the digits from the initial number.
+ * To check for pallindrome, we should Reverse the initial number.
+ *
+ * REVERSING THE NUMBER:
  * This can be achieved by dividing the number by 10.
  * We can then multiply the new number by 10 and add this fetched digit to it.
  * The main concept here is - when a new digit is added to a number, its added at the last of it, i.e. we can say at the tenth of the existing number.
+ *
+ * Now, we can check whether the 2 numbers are equal for Pallindrome.
  */
-public class ReverseANumber {
+public class PalindromeNumber {
 
     public static void main(String[] args) {
-        System.out.println("Reversed Number: " + reverseTheGivenNumber(123793));
+        System.out.println("Is Palindrome Number: " + checkForPalindromeNumber(757));
+    }
+
+    public static boolean checkForPalindromeNumber(int number){
+        int reversedNumber = reverseTheGivenNumber(number);
+
+        if(reversedNumber == number){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static int reverseTheGivenNumber(int number){

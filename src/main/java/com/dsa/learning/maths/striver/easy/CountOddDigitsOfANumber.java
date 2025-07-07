@@ -1,4 +1,4 @@
-package com.dsa.learning.maths.striver;
+package com.dsa.learning.maths.striver.easy;
 
 /**
  * THOUGHT PROCESS:
@@ -9,7 +9,7 @@ package com.dsa.learning.maths.striver;
 public class CountOddDigitsOfANumber {
 
     public static void main(String[] args) {
-        System.out.println("Total number of digits: " + calculateOddDigits(123793));
+        System.out.println("Total number of odd digits: " + calculateOddDigits(123793));
     }
 
     public static int calculateOddDigits(int number){
