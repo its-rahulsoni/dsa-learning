@@ -1,0 +1,94 @@
+
+* https://www.geeksforgeeks.org/converting-roman-numerals-decimal-lying-1-3999/
+
+Sol -
+Algorithm to convert Roman Numerals to Integer Number:
+
+Split the Roman Numeral string into Roman Symbols (character).
+Convert each symbol of Roman Numerals into the value it represents.
+Take symbol one by one from starting from index last index:
+
+We compare 2 characters at a time:
+i = str.len - 1
+j = i - 1;
+
+If, value of symbol at j - val[j], is less than than the value of symbol at i - val[i], then we subtract val[j] from val[i]
+and add the resultant value to our final result variable.
+Else, we add the val[i] to our final resultant variable.
+
+For case, where j = -1, we simply add the val[i] to resultant variable.
+
+------------------------------------------------------------------------------------------------------------
+
+* https://www.geeksforgeeks.org/converting-decimal-number-lying-between-1-to-3999-to-roman-numerals/
+
+Sol -
+Use the table given in explanation, and start from the highest position to find out no of characters that should occur based upon the
+data in table.
+Ex- 3549, no is in thousands (since its 4 characters long), so :-
+3549 / 1000 = 3 -> it means we need to place 3 Ms at starting i.e. MMM
+3549 % 1000 = 549 -> this will go back as param of 2nd time function call.
+Result = MMM
+
+549 - No is in hundreds and we've D = 500 as a 100s number and our no (549) is slightly greater than 500.
+549 / 500 = 1 -> D
+549 % 500 = 49 -> to be used in next function call.
+Result = MMMD
+
+49 - No is in 10s and our no (49) is slightly greater than 40. (Note:- We've 10,40,50,90 as tens numbers).
+49 / 40 = 1 -> XL
+49 % 40 = 9 -> next func call.
+Result = MMMDXL
+
+9 - IX, already present in our list.
+Result = MMMDXLIX
+
+------------------------------------------------------------------------------------------------------------
+
+* https://www.geeksforgeeks.org/find-equal-point-string-brackets/
+
+Sol -
+Since there are 2 sub-strings involved and we need to check count of opening brackets in 1st sub-string and closing brackets in
+2nd sub-string.
+So, we start counting no of opening brackets in from starting and closing brackets from end, and at any point where the count
+is equal, we fetch that index as its our answer.
+
+* https://www.geeksforgeeks.org/check-if-two-given-strings-are-isomorphic-to-each-other/
+
+Sol -
+Use a HashMap to store characters from both the strings and use containsKey() and containsValue() methods of HashMap
+to find presence of characters as keys and values.
+
+------------------------------------------------------------------------------------------------------------
+* https://www.geeksforgeeks.org/check-two-strings-k-anagrams-not/
+
+Sol -
+Anagram - No of characters should be same in both the strings.
+The no of dis-similar characters, i.e. characters found in one string but absent in another
+
+
+------------------------------------------------------------------------------------------------------------
+* https://www.geeksforgeeks.org/check-string-can-obtained-rotating-another-string-2-places/
+
+Sol - Use substring(from, to) method to calculate new string. THe values of from and to will change
+based upon clockwise and anti-clockwise directions.
+
+------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+
