@@ -1,0 +1,27 @@
+* https://www.geeksforgeeks.org/move-negative-numbers-beginning-positive-end-constant-extra-space/
+
+Sol -
+Coding Pattern - 2 Pointers Approach
+
+left pointer -> to store -ve nos to the left, and
+right pointer -> to store +ve nos to the right.
+
+Compare left and right pointer index values till both cross each other ....
+
+-------------------------------------------------------------------
+
+* https://www.geeksforgeeks.org/union-and-intersection-of-two-sorted-arrays-2/
+
+Sol -
+Just like we compare 2 sorted arrays in Tim Sort using 2 Pointers.
+
+UNION:-
+Compare each element of both arrays and store smaller no in resultant array
+and increment respective pointer. If both nos are equal, then increment
+both the pointers.
+
+At last, store all the elements of larger array that are left for processing.
+
+INTERSECTION:-
+We store only those numbers that are equal in both the arrays and increment
+both pointers afterwards.
