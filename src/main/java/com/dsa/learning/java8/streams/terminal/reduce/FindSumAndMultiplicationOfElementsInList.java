@@ -1,4 +1,4 @@
-package com.dsa.learning.java8.streams.reduce;
+package com.dsa.learning.java8.streams.terminal.reduce;
 
 import java.util.ArrayList;
 import java.util.Arrays;

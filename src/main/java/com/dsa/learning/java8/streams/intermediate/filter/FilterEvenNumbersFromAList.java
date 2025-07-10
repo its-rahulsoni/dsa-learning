@@ -1,4 +1,4 @@
-package com.dsa.learning.java8.streams.filter;
+package com.dsa.learning.java8.streams.intermediate.filter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

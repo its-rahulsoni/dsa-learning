@@ -1,4 +1,4 @@
-package com.dsa.learning.java8.streams.max;
+package com.dsa.learning.java8.streams.terminal.max;
 
 import java.util.*;
 

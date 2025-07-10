@@ -1,4 +1,4 @@
-package com.dsa.learning.java8.streams.map;
+package com.dsa.learning.java8.streams.intermediate.map;
 
 import java.util.ArrayList;
 import java.util.Arrays;
