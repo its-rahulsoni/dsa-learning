@@ -1,8 +1,8 @@
 package com.dsa.learning.preparation_2023.leetcode.bst;
 
-import com.leetcode.bst.pojos.Node;
-import com.leetcode.bst.utils.CreateBST;
-import com.leetcode.linkedlist.utils.TreeTraversals;
+import com.dsa.learning.preparation_2023.leetcode.bst.pojos.Node;
+import com.dsa.learning.preparation_2023.leetcode.bst.utils.CreateBST;
+import com.dsa.learning.preparation_2023.leetcode.linkedlist.utils.TreeTraversals;
 
 /**
  * You are given the root of a binary search tree (BST) and an integer val.

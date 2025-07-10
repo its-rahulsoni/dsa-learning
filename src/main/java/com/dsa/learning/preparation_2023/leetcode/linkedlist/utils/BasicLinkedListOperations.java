@@ -1,6 +1,7 @@
 package com.dsa.learning.preparation_2023.leetcode.linkedlist.utils;
 
-import com.leetcode.linkedlist.pojos.Node;
+
+import com.dsa.learning.preparation_2023.leetcode.linkedlist.pojos.Node;
 
 public class BasicLinkedListOperations {
 

@@ -1,6 +1,7 @@
 package com.dsa.learning.preparation_2023.leetcode.linkedlist.utils;
 
-import com.leetcode.bst.pojos.Node;
+
+import com.dsa.learning.preparation_2023.leetcode.bst.pojos.Node;
 
 public class TreeTraversals {
 

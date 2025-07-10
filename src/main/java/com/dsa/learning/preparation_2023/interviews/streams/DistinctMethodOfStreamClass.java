@@ -1,6 +1,7 @@
 package com.dsa.learning.preparation_2023.interviews.streams;
 
-import com.coding.interviews.streams.pojo.Employee;
+
+import com.dsa.learning.preparation_2023.interviews.streams.pojo.Employee;
 
 import java.util.Arrays;
 import java.util.List;
