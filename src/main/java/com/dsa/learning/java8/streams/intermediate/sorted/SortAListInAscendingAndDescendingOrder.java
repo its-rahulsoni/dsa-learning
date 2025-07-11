@@ -36,5 +36,11 @@ public class SortAListInAscendingAndDescendingOrder {
                 .sorted(Comparator.comparingInt(a -> Integer.valueOf(a)))
                 .toList();
         System.out.println("Using Comparator with Comparator.comparingInt(a -> Integer.valueOf(a)) with sorted(): " + output5);
+
+        System.out.println("-----------------------------");
+        List<Integer> output6 = numbers.stream()
+                .sorted(Comparator.reverseOrder())
+                .toList();
+        System.out.println("Using Comparator's Reverse Ordering with sorted(): " + output6);
     }
 }
