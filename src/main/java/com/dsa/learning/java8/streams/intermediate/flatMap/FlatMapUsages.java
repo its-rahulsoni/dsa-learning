@@ -227,6 +227,8 @@ public class FlatMapUsages {
      * flatMap(Arrays::stream) OR flatMap(arr -> List.of(arr).stream()):
      * Works on each array, flattens them into a single stream of String. By first converting them into a list and then into a stream.
      *
+     * NOTE: We can not convert an array into a stream.
+     *
      * collect(Collectors.toList()):
      * Collects all strings into one flat list.
      */

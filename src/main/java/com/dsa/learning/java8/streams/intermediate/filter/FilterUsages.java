@@ -143,8 +143,8 @@ public class FilterUsages {
         );
 
         List<Employee> output = employees.stream()
-                .filter(emp -> emp.getSalary() < 50000)  // Keep only Even numbers ....
-                .collect(Collectors.toUnmodifiableList()); // Count the distinct Even numbers ....
+                .filter(emp -> emp.getSalary() < 50000)
+                .collect(Collectors.toUnmodifiableList());
         System.out.println("Employees With Salary Less Than 50000: " + output);
 
         addDivider();
