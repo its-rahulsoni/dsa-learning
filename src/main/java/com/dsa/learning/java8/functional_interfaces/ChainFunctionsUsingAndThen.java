@@ -1,4 +1,4 @@
-package com.dsa.learning.java8.streams.functional_interfaces;
+package com.dsa.learning.java8.functional_interfaces;
 
 import java.util.function.Function;
 
