@@ -21,15 +21,15 @@ public class StringRotation {
     public static void main(String[] args) {
         String str = "abcde";
 
-        //System.out.println("Reversed String Approach #01: " + reverseStringApproach1(str,2));
-        //System.out.println("Reversed String (WithoutStringBuilder) Approach #01: " +
-          //      reverseStringApproach1WithoutStringBuilder(str,2));
+        System.out.println("Rotated String Approach #01: " + rotateStringApproach1(str,2));
+        //System.out.println("Rotated String (WithoutStringBuilder) Approach #01: " +
+          //      rotateStringApproach1WithoutStringBuilder(str,2));
 
-        //reverseStringApproach2(str, 2);
-        reverseStringApproach3(str, 2);
+        rotateStringApproach2(str, 2);
+        rotateStringApproach3(str, 2);
     }
 
-    public static String reverseStringApproach1(String str, int times){
+    public static String rotateStringApproach1(String str, int times){
         String output = str;
         int length = str.length();
 
@@ -45,7 +45,7 @@ public class StringRotation {
         return output;
     }
 
-    public static String reverseStringApproach1WithoutStringBuilder(String str, int times){
+    public static String rotateStringApproach1WithoutStringBuilder(String str, int times){
         String output = str;
         int length = str.length();
 
@@ -61,7 +61,7 @@ public class StringRotation {
 
 
     // Time Complexity: O(N) ....
-    public static String reverseStringApproach2(String str, int times){
+    public static String rotateStringApproach2(String str, int times){
         int length = str.length();
 
         /**
@@ -77,7 +77,7 @@ public class StringRotation {
     }
 
     // Time Complexity: O(N) ....
-    public static String reverseStringApproach3(String str, int times){
+    public static String rotateStringApproach3(String str, int times){
         int length = str.length();
 
         /**
