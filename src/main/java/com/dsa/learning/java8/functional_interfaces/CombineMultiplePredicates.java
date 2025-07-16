@@ -26,6 +26,12 @@ public class CombineMultiplePredicates {
 
     public static void main(String[] args) {
 
+        combiningMultiplePredicates();
+    }
+
+    public static void combiningMultiplePredicates(){
+        System.out.println("**** combiningMultiplePredicates() ****");
+
         int number = 11;
 
         // Create predicates for even and greater than 10 ....
@@ -42,8 +48,13 @@ public class CombineMultiplePredicates {
 
         // NEGATE - Negates a predicate (logical NOT). The negate() method simply reverses the output of the predicate (i.e., true becomes false and vice versa) ....
         boolean negateResult = evenPredicate.negate().test(number);
-        System.out.println("Is number " + number + ", even after Negation: " + negateResult);
+        System.out.println("Is number " + number + ", even after NEGATION: " + negateResult);
 
+        addDivider();
+    }
+
+    public static void addDivider(){
+        System.out.println("\n------------------------------------------");
     }
 
 }
