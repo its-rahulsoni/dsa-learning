@@ -1,6 +1,7 @@
 package com.dsa.learning.java8.completable_future;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,7 +19,7 @@ public class CreateCFUsingCustomExecutor {
      * runAsync() and supplyAsync() both make use of the executor.
      * Always shutdown the executor after usage to avoid resource leaks.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)  throws ExecutionException, InterruptedException{
 
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
@@ -41,7 +42,7 @@ public class CreateCFUsingCustomExecutor {
             System.out.println("SupplyAsync Task started using a thread of Executor Service: " + Thread.currentThread().getName());
 
             try {
-                Thread.sleep(2000); // Simulating a delay
+                Thread.sleep(9000); // Simulating a delay
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -53,8 +54,9 @@ public class CreateCFUsingCustomExecutor {
         // Continue with the program while the task runs asynchronously ....
         System.out.println("Main Thread is free now: " + Thread.currentThread().getName());
 
-        futureRunObject.join();
-        String supplyOutput = futureSupplyObject.join();
+        //futureRunObject.join();
+        //String supplyOutput = futureSupplyObject.join(); // Throws Runtime exception ....
+         String supplyOutput = futureSupplyObject.get(); // throws ExecutionException, InterruptedException: Needs to be thrown in the method as this throws checked exception ....
 
         System.out.println("Main thread stopped after async task and output received is: " + supplyOutput);
 

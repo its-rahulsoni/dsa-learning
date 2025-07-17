@@ -1,6 +1,7 @@
 package com.dsa.learning.java8.completable_future;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 /**
  * supplyAsync() Method
@@ -9,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
  */
 public class CreateCFUsingSupplyAsync {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         // Run an asynchronous task using supplyAsync ....
         CompletableFuture<String> futureObject = CompletableFuture.supplyAsync(() -> {
@@ -31,7 +32,8 @@ public class CreateCFUsingSupplyAsync {
         System.out.println("Main Thread is free now: " + Thread.currentThread().getName());
 
         // Get the result of the asynchronous task (blocking, for demonstration) ....
-        String output = futureObject.join();
+        String output = futureObject.join(); // Throws Runtime exception ....
+       // String output = futureObject.get(); // throws ExecutionException, InterruptedException: Needs to be thrown in the method as this throws checked exception ....
 
         System.out.println("Main thread stopped after async task and output received is: " + output);
 
