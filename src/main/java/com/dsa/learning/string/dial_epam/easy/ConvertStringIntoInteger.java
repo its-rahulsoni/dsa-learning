@@ -5,15 +5,42 @@ public class ConvertStringIntoInteger {
     public static void main(String[] args) {
         // Example usage
         try {
-            System.out.println(stringToInt("12345"));           // Output: 12345
+            System.out.println(stringToIntConversion("12345"));           // Output: 12345
 //            System.out.println(stringToInt("   -9876  "));      // Output: -9876
 //            System.out.println(stringToInt("+42"));             // Output: 42
 //            System.out.println(stringToInt("0"));               // Output: 0
-//            System.out.println(stringToInt("-2147483648"));     // Output: -2147483648
+            System.out.println(stringToIntConversion("-2147483648"));     // Output: -2147483648
 //            System.out.println(stringToInt("2147483647"));      // Output: 2147483647
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+    }
+
+    public static int stringToIntConversion(String input){
+        int output = 0;
+        int temp = 0;
+        boolean isSignedNumber = false;
+        char signedChar = '-';
+
+        for(char ch : input.toCharArray()){
+            if(ch == '-' || ch == '+'){
+                isSignedNumber = true;
+                signedChar = ch;
+            } else{
+                temp = ch - '0';
+                output = (output * 10) + temp;
+            }
+
+        }
+
+        if(isSignedNumber){
+            if(signedChar == '-'){
+                output = output * -1;
+            }
+        }
+        System.out.println("output: " + output);
+
+        return output;
     }
 
     public static int stringToInt(String input) {

@@ -348,9 +348,6 @@ public class FlatMapUsages {
         addDivider();
     }
 
-
-
-
     public static void addDivider(){
         System.out.println("\n------------------------------------------");
     }
