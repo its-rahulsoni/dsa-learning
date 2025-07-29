@@ -3,6 +3,7 @@ package com.dsa.learning.java8.streams.terminal.max;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 /**
  * Given a list of sublists (List<List<Integer>>), find the sublist with the highest sum.
@@ -33,6 +34,11 @@ public class NestedListMaximum {
         // Handle optional result
         // output.ifPresent(max -> System.out.println("Max Sublist: " + max));
         // Output: Max Sublist: [6, 7, 8]
+
+        OptionalInt max = nestedLists.stream()
+                .mapToInt(subList -> subList.stream().mapToInt(a -> a).sum())
+                .max();
+        System.out.println("max: " + max.getAsInt());
     }
 
     /**

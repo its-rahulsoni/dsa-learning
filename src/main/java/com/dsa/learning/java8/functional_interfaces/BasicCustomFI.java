@@ -22,3 +22,4 @@ public class BasicCustomFI {
 interface SquareCalculator{
     int calculateSquare(int number); // Abstract method for square calculation ....
 }
+

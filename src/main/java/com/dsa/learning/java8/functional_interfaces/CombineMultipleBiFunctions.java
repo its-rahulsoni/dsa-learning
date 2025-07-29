@@ -14,6 +14,13 @@ public class CombineMultipleBiFunctions {
         combiningBiFunctions();
 
         chainingBiFunctionUsingAndThen();
+
+        BiFunction<Integer,Integer,Integer> b1 = (a,b) -> a * b;
+        BiFunction<Integer,Integer,Integer> b2 = (a,b) -> a + b;
+
+        Function<Integer, Integer> f = a -> a * 5;
+        System.out.println("Comb: " + b1.andThen(f).apply(3,5));
+        System.out.println("Comb: " + b1.apply(b2.apply(4,5), 8)); // The 1st input of B1 is the output of second BiFunction B2 ....
     }
 
     /**

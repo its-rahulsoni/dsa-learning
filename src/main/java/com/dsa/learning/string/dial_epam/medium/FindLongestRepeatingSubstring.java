@@ -7,7 +7,8 @@ import java.util.Map;
 
 /**
  * Problem: Find the Longest Repeating Substring
- * The task is to find the longest substring that occurs more than once in a given string. This substring must appear multiple times in the original string and be as long as possible.
+ * The task is to find the longest substring that occurs more than once in a given string. This substring must appear multiple
+ * times in the original string and be as long as possible.
  *
  * Examples:
  *

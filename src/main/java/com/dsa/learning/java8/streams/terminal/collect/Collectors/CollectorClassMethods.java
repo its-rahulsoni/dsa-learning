@@ -1,6 +1,8 @@
 package com.dsa.learning.java8.streams.terminal.collect.Collectors;
 
 import com.dsa.learning.models.EmployeeDTO;
+import com.dsa.learning.models.Transaction;
+import com.dsa.learning.preparation_2023.interviews.streams.pojo.Employee;
 
 import java.util.IntSummaryStatistics;
 import java.util.List;
@@ -43,6 +45,10 @@ public class CollectorClassMethods {
 
         // 11. Reducing Elements ....
         reducingElements();
+
+        groupEmployeesByAge();
+
+        groupTransactionsByCurrencyAndThenByTransactionType();
     }
 
     /**
@@ -199,7 +205,41 @@ public class CollectorClassMethods {
                 .collect(Collectors.counting());
         System.out.println("Count Of Even Numbers: " + countOfEvenNumbers);
 
-        List<String> words = List.of("apple", "apricot", "banana", "blueberry", "cherry");
+        /**
+         * Map<String, Long> wordCountMap = words.stream()
+         *                 .collect(Collectors.groupingBy(
+         *                         w -> w, // Key: the word itself ....
+         *                         Collectors.counting() // Value: count occurrences ....
+         *                 ));
+         * How This Works:
+         * groupingBy(w -> w)
+         * Groups the stream elements (words) by their identity (the word itself).
+         *
+         * Creates a Map<String, List<String>> temporarily:
+         * {
+         *   "apple"     : ["apple"],
+         *   "blueberry" : ["blueberry", "blueberry"],
+         *   "apricot"   : ["apricot", "apricot", "apricot"],
+         *   ...
+         * }
+         * Collectors.counting()
+         *
+         * Replaces each List<String> with its size (count of elements).
+         * Internally, it uses:
+         * Collectors.reducing(0L, e -> 1L, Long::sum)
+         * Maps each element to 1L, then sums them up.
+         *
+         * Final Result
+         * Converts the intermediate Map<String, List<String>> to Map<String, Long>
+         */
+        List<String> words = List.of("apple", "blueberry", "apricot", "banana", "apricot", "blueberry", "cherry", "apricot");
+
+        Map<String, Long> wordCountMap = words.stream()
+                .collect(Collectors.groupingBy(
+                        w -> w, // Key: the word itself ....
+                        Collectors.counting() // Value: count occurrences in the list created by above line ....
+                ));
+        System.out.println("Count of words in the given list: " + wordCountMap);
 
         Map<Character, Long> output = words.stream()
                 .collect(Collectors.groupingBy(word -> word.charAt(0),
@@ -250,6 +290,10 @@ public class CollectorClassMethods {
         List<String> output2 = names.stream()
                 .collect(Collectors.mapping(a -> a.toUpperCase(), Collectors.toList())); // Lambda Expression ....
 
+        List<String> output3 = names.stream()
+                        .map(a -> a.toUpperCase())
+                                .collect(Collectors.toUnmodifiableList());
+
         System.out.println("Mapping function that transforms strings into Upper Case: " + output);
 
         addDivider();
@@ -294,6 +338,18 @@ public class CollectorClassMethods {
                 .collect(Collectors.partitioningBy(a -> a % 2 == 0));
         System.out.println("Partitioning Elements Output: " + output);
 
+        List<String> fruits = List.of("apple", "banana", "cherry", "date");
+
+        Map<Boolean,Map<String, Long>> output2 = fruits.stream()
+                        .collect(Collectors.partitioningBy(
+                                str -> str.length() % 2 == 0,
+                                Collectors.groupingBy(
+                                        str -> str,
+                                        Collectors.counting()
+                                )
+                        ));
+        System.out.println("output2: " + output2);
+
         addDivider();
     }
 
@@ -331,6 +387,61 @@ public class CollectorClassMethods {
         addDivider();
     }
 
+
+    public static void groupEmployeesByAge(){
+        System.out.println("**** groupEmployeesByAge() ****");
+
+        List<EmployeeDTO> employees = createNewEmployeesList();
+
+        Map<Integer, Long> map = employees.stream()
+                        .collect(Collectors.groupingBy(
+                                e -> e.getAge(),
+                                Collectors.counting() // This counts the total no of elements present in the list created by above line ....
+                        ));
+        System.out.println("Age to Count mapping of Employees: " + map);
+
+        // Since, we are required to take a total of a field value from a list of objects, it means that we have to COLLECT
+        // the total.
+        double totalSalary = employees.stream()
+                        .collect(Collectors.summingDouble(e -> e.getSalary()));
+        System.out.println("totalSalary: " + totalSalary);
+
+        addDivider();
+    }
+
+
+    public static void groupTransactionsByCurrencyAndThenByTransactionType (){
+        System.out.println("**** groupTransactionsByCurrencyAndThenByTransactionType() ****");
+
+        List<Transaction> transactions = List.of(
+                new Transaction("T1", "USD", "DEBIT", 100.0),
+                new Transaction("T2", "USD", "CREDIT", 200.0),
+                new Transaction("T3", "EUR", "DEBIT", 150.0)
+        );
+
+        /**
+         * {
+         *     "USD"={"DEBIT"=[T1], "CREDIT"=[T2]},
+         *     "EUR"={"DEBIT"=[T3]}
+         * }
+         */
+
+        Map<String, Map<String, List<String>>> output = transactions.stream()
+                        .collect(Collectors.groupingBy(
+                                t -> t.currency(),
+                                Collectors.groupingBy(
+                                        t -> t.type(),
+                                        Collectors.mapping(t -> t.id(), Collectors.toList())
+                                )
+                        ));
+
+        System.out.println("output:" + output);
+
+        addDivider();
+    }
+
+
+
     public static void addDivider(){
         System.out.println("\n------------------------------------------");
     }
@@ -339,8 +450,10 @@ public class CollectorClassMethods {
         List<EmployeeDTO> employees = List.of(
                 new EmployeeDTO(1, 25, "Alice", 50000),
                 new EmployeeDTO(2, 48, "Bob", 60000),
-                new EmployeeDTO(3, 35, "Charlie", 45000),
-                new EmployeeDTO(4, 20, "Diana", 75000)
+                new EmployeeDTO(3, 25, "Charlie", 45000),
+                new EmployeeDTO(4, 48, "Diana", 75000),
+                new EmployeeDTO(4, 25, "Diana", 25000),
+                new EmployeeDTO(4, 56, "Diana", 11000)
         );
         return employees;
     }

@@ -12,6 +12,10 @@ public class CombineMultipleConsumers {
     public static void main(String[] args) {
 
         usingAndThen();
+
+        Consumer<String> c1 = a -> System.out.println("C1: " + a);
+        Consumer<String> c2 = a -> System.out.println("C2: " + a);
+        c1.andThen(c2).accept("asasas");
     }
 
     /**

@@ -18,6 +18,9 @@ public class UnaryOperatorImpl {
     public static void main(String[] args) {
 
         calculateSquareOfNumber();
+
+        UnaryOperator<String> u = s -> "rahul" + s;
+        System.out.println("Unary: " + u.apply("soni"));
     }
 
     public static void calculateSquareOfNumber(){
