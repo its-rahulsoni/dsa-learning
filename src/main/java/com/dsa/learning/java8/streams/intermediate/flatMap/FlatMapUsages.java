@@ -83,7 +83,8 @@ public class FlatMapUsages {
      * 02. Flatten a Stream of Strings into Words.
      * Suppose you have a stream of sentences and want to extract all unique words.
      *
-     * The core logic here is that we have string objects and NOT sub-lists here. So we split each string into a list of words and then create a Stream of this list of words.
+     * The core logic here is that we have string objects and NOT sub-lists here. So we split each string into a list of words using delimiter - " "
+     * and then create a Stream of this list of words.
      *
      * Explanation
      * sentence.split(" "):

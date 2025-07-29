@@ -38,6 +38,19 @@ public class FilterUsages {
 
         // 10. Complex Filtering with Optional Data ....
         complexFilteringWithOptionalData();
+
+        List<List<Integer>> list = List.of(
+                List.of(1,2,3),
+                List.of(4,33),
+                List.of(6,1,21)
+        );
+
+        List<Integer> output = list.stream()
+                .flatMap(n -> n.stream())
+                .filter(n -> n < 5)
+                .collect(Collectors.toUnmodifiableList());
+        System.out.println("output: " + output);
+
     }
 
     /**

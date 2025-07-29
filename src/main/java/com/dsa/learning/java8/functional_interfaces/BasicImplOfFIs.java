@@ -17,6 +17,27 @@ public class BasicImplOfFIs {
         functionImpl();
 
         supplierImpl();
+
+        // Revision ....
+        Predicate<String> pr = s -> {
+            if(s.length() == 3)
+                return true;
+            else
+                return false;
+        };
+
+        Function<Integer, Integer> f = a -> {
+            return a * 5;
+        };
+
+        Consumer<String> c = s -> System.out.println("S: " + s);
+
+        Supplier<Integer> s = () -> { return 100; };
+
+        System.out.println("P: " + pr.test("string"));
+        System.out.println("F: " + f.apply(3));
+        System.out.println("C: " ); c.accept("asasa");
+        System.out.println("S: " + s.get());
     }
 
     public static void predicateImpl(){

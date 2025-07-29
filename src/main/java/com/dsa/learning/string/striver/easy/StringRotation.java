@@ -6,6 +6,7 @@ package com.dsa.learning.string.striver.easy;
  * Approach #01: We take the first character of the string in each iteration in a separate character var.
  *               Then, we create a sub-string of the remaining string and append it to the String Builder.
  *               Finally, we append the initial character to the end of the String Builder.
+ *               Total Time Complexity: O(n) * O(n) -> O(n^2)
  *
  * Approach #02: We create a Sub-String ONLY ONCE. We start this string from index after the rotation times value
  *               and continue it till the end of string. Finally we append the initial portion of the string from index

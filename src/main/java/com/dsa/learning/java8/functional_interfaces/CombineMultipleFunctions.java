@@ -15,6 +15,12 @@ public class CombineMultipleFunctions {
 
         // compose(Function before): Applies the specified function first, then executes the current function on the result ....
         usingCompose();
+
+        Function<Integer, Integer> f1 = a -> a * 5;
+        Function<Integer, Integer> f2 = a -> a + 5;
+
+        System.out.println("comb1: " + f1.andThen(f2).apply(6)); // andThen accepts a Function and not Integer/String. The output of f1 here becomes the input for f2 ....
+        System.out.println("comb2: " + f1.compose(f2).apply(6)); // compose results in apply(6) being applied to F2 and then its output becomes the input for F1 ....
     }
 
     /**

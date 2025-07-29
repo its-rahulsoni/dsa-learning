@@ -1,5 +1,6 @@
 package com.dsa.learning;
 
+import com.dsa.learning.design_patterns.BuilderPattern;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
