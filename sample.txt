@@ -1,0 +1,6 @@
+my name is rahul soni
+i work for epam systems
+i have 12 years of IT experience
+I am a java backend developer
+i also have good command on kafka and aws
+I am learning java8 streams api
