@@ -29,7 +29,7 @@ public class MyCustomFlightSearchService {
 
         List<FlightSummary> flights = (List<FlightSummary>) flightAvailabilityService.getAvailableFlights(request);
 
-        // NOTE: Remember to pass he type of Stream that we are creating - here its 'FlightSummary' ....
+        // NOTE: Remember to pass the TYPE of Stream that we are creating - here its 'FlightSummary' ....
         Stream<FlightSummary> stream = flights.stream();
 
         if(searchQuery.getIsCancellable() != null){
