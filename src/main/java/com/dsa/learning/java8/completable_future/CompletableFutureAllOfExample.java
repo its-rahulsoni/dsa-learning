@@ -31,9 +31,12 @@ public class CompletableFutureAllOfExample {
         usingAllOfMethod();
 
         usingAllOfWithException();
+
+        
     }
 
     public static void usingAllOfMethod(){
+
         System.out.println("**** usingAllOfMethod() ****");
         // Create three independent CompletableFuture tasks
         CompletableFuture<Integer> future1 = CompletableFuture.supplyAsync(() -> {
