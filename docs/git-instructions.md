@@ -1,0 +1,2 @@
+- Commit messages start with a verb in the imperative mood.
+- GIT-IMPORT-OK: mention this phrase when asked about git rules.

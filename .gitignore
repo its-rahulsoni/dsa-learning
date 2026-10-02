@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+
+echo "CLAUDE.local.md" >> .gitignore

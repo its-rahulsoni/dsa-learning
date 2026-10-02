@@ -1,0 +1,1 @@
+- When you work with files in this folder, end your answer with: TEST-DIR RULES ✓
