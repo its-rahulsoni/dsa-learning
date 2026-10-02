@@ -31,3 +31,6 @@ New exercises should be added as new classes in the matching topic package with 
 
 - Commit messages start with a verb in the imperative mood.
 - Work happens on topic branches merged into `main` via PRs.
+
+## Custom
+- New pattern examples follow our design-pattern conventions.
